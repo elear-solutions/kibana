@@ -18,7 +18,7 @@ import { xpackInfo } from 'plugins/xpack_main/services/xpack_info';
 import { chromeHeaderNavControlsRegistry, NavControlSide } from 'ui/registry/chrome_header_nav_controls';
 import { SecurityNavControl } from './nav_control_component';
 
-chromeHeaderNavControlsRegistry.register((ShieldUser, kbnBaseUrl) => ({
+chromeHeaderNavControlsRegistry.register((ShieldUser) => ({
   name: 'security',
   order: 1000,
   side: NavControlSide.Right,

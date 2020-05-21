@@ -130,17 +130,17 @@ export async function setupAuthentication({
       const error = authenticationResult.error!;
       // proxy Elasticsearch "native" errors
       const statusCode = getErrorStatusCode(error);
-      //<!--COCO Begin-->
+      // <!--COCO Begin-->
       // COCO: Trhow custom coco error pages if authentication failed
       if (typeof statusCode === 'number') {
-        let cocoerrorpage:string = "https://getcoco.buzz/error-404";
+        const cocoerrorpage: string = 'https://getcoco.buzz/error-404';
         return response.redirected({
-         headers: {
-           location: cocoerrorpage,
+          headers: {
+            location: cocoerrorpage,
           },
         });
       }
-      //<!--COCO End-->
+      // <!--COCO End-->
 
       return response.unauthorized({
         headers: authenticationResult.authResponseHeaders,
