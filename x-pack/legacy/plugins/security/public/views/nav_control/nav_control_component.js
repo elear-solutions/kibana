@@ -83,23 +83,21 @@ export class SecurityNavControl extends Component {
               <EuiText>
                 <p>{name}</p>
               </EuiText>
-            //<!--COCO Begin-->
-            // COCO: remove reference ui link for editProfileUrl
               <EuiSpacer size="m" />
 
-                  <EuiFlexGroup justifyContent="spaceBetween">
-                    <EuiFlexItem grow={false}>
-                      <EuiLink href={logoutUrl} data-test-subj="logoutLink">
-                        <FormattedMessage
-                          id="xpack.security.navControlComponent.logoutLinkText"
-                          defaultMessage="Log out"
-                        />
-                      </EuiLink>
-                    </EuiFlexItem>
-                  </EuiFlexGroup>
+              // COCO: remove reference ui link for editProfileUrl
+              <EuiFlexGroup justifyContent="spaceBetween">
+                <EuiFlexItem grow={false}>
+                  <EuiLink href={logoutUrl} data-test-subj="logoutLink">
+                    <FormattedMessage
+                      id="xpack.security.navControlComponent.logoutLinkText"
+                      defaultMessage="Log out"
+                    />
+                  </EuiLink>
+                </EuiFlexItem>
+              </EuiFlexGroup>
             </EuiFlexItem>
           </EuiFlexGroup>
-        //<!--COCO End-->
         </div>
       </EuiPopover>
     );
