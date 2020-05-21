@@ -28,7 +28,8 @@ chromeHeaderNavControlsRegistry.register((ShieldUser, kbnBaseUrl) => ({
 
     const props = {
       user: ShieldUser.getCurrent(),
-      editProfileUrl: chrome.addBasePath(`${kbnBaseUrl}#/account`),
+      // COCO: comment editProfileUrl to remove editProfileUrl from kibana ui
+      // editProfileUrl: chrome.addBasePath(`${kbnBaseUrl}#/account`),
       logoutUrl: chrome.addBasePath(`/logout`)
     };
 

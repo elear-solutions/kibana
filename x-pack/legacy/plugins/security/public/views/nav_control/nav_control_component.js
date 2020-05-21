@@ -46,7 +46,8 @@ export class SecurityNavControl extends Component {
   };
 
   render() {
-    const { user, editProfileUrl, logoutUrl } = this.props;
+    // COCO: remove editProfileUrl from this.props to remove editProfileUrl from kibana ui
+    const { user, logoutUrl } = this.props;
     const name = user.full_name || user.username || '';
     const button = (
       <EuiHeaderSectionItemButton
@@ -82,21 +83,11 @@ export class SecurityNavControl extends Component {
               <EuiText>
                 <p>{name}</p>
               </EuiText>
-
+            //<!--COCO Begin-->
+            // COCO: remove reference ui link for editProfileUrl
               <EuiSpacer size="m" />
 
-              <EuiFlexGroup>
-                <EuiFlexItem>
                   <EuiFlexGroup justifyContent="spaceBetween">
-                    <EuiFlexItem grow={false}>
-                      <EuiLink href={editProfileUrl} data-test-subj="profileLink">
-                        <FormattedMessage
-                          id="xpack.security.navControlComponent.editProfileLinkText"
-                          defaultMessage="Edit profile"
-                        />
-                      </EuiLink>
-                    </EuiFlexItem>
-
                     <EuiFlexItem grow={false}>
                       <EuiLink href={logoutUrl} data-test-subj="logoutLink">
                         <FormattedMessage
@@ -106,10 +97,9 @@ export class SecurityNavControl extends Component {
                       </EuiLink>
                     </EuiFlexItem>
                   </EuiFlexGroup>
-                </EuiFlexItem>
-              </EuiFlexGroup>
             </EuiFlexItem>
           </EuiFlexGroup>
+        //<!--COCO End-->
         </div>
       </EuiPopover>
     );
